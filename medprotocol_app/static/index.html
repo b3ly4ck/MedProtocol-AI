@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>MedProtocol</title>
+  <link rel="stylesheet" href="/ui/styles.css">
+</head>
+<body>
+  <header class="top">
+    <h1>MedProtocol</h1>
+    <div class="row">
+      <button id="go-home">Главная</button>
+      <button id="go-list">Мои протоколы</button>
+      <button id="go-accept">Принять пациента</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="view-home" class="view">
+      <h2>Старт</h2>
+      <p>Создай протокол или выбери существующий и заполни визит.</p>
+    </section>
+
+    <section id="view-list" class="view hidden">
+      <h2>Мои протоколы</h2>
+      <div class="box">
+        <h3>Создать протокол</h3>
+        <div class="col">
+          <label>Название</label>
+          <input id="p-name" type="text" placeholder="Осмотр терапевта">
+          <label>Специальность</label>
+          <input id="p-specialty" type="text" placeholder="general">
+          <div id="sections"></div>
+          <div class="row">
+            <button id="add-section" class="secondary">Добавить раздел</button>
+            <button id="save-protocol">Сохранить протокол</button>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <h3>Список</h3>
+        <button id="refresh-list" class="secondary">Обновить</button>
+        <div id="protocol-list"></div>
+      </div>
+    </section>
+
+    <section id="view-accept" class="view hidden">
+      <h2>Принять пациента</h2>
+      <div class="box">
+        <label>Протокол</label>
+        <select id="protocol-select"></select>
+        <button id="load-protocol" class="secondary">Открыть форму</button>
+      </div>
+      <div class="box">
+        <h3 id="visit-title">Форма визита</h3>
+        <form id="visit-form"></form>
+        <div class="row">
+          <button id="check-visit">Сохранить и проверить</button>
+        </div>
+      </div>
+      <div class="box">
+        <h3>Результат проверки</h3>
+        <div id="issues"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="status"></footer>
+  <script src="/ui/app.js"></script>
+</body>
+</html>
